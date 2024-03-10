@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random app</title>
+</head>
+<body>
+    <h1>Random app</h1><br/>
+    <label>Max:</label>
+    <input type="number" id="max"><br/>
+    <label>Min:</label>
+    <input type="number" id="min"><br/>
+    <p id="display"></p>
+    <button onclick="enter()">Enter</button>
+    <button id="clear">Clear</button><br/>
+    <b><h3>Lê Hoàng Phúc(Lucas Le) </h3></b><br/>
+    <button id="info">Thông tin liên hệ</button><br/>
+    <p id="info2"></p>
+    <p id="info3"></p>
+    <p id="info4"></p>    
+    <script>
+        function enter(){
+           let max = document.getElementById("max");
+           let min = document.getElementById("min");
+           max = max.value;
+           min = min.value;
+           max = Number(max);
+           min = Number(min);
+           let random = Math.round(Math.random() * (max - min) ) + min;
+           document.getElementById("display").textContent = "Kết quả: " + random;
+           if(random == 3){
+            document.getElementById("display").textContent = "Kết quả: " + "I like u (D):333";
+           }
+        }
+    </script>
+    <script>
+        document.getElementById("clear").onclick = function(){
+            document.getElementById("display").textContent = "";
+        }
+    </script>
+     <script>
+        let click = false;
+        let info = document.getElementById("info");
+        info.onclick = function(){
+            if(click == false){
+                click = true;
+                document.getElementById("info2").textContent = "Email: phucgs212@gmail.com";
+                document.getElementById("info3").textContent = "Tiktok: https://www.tiktok.com/@gs212js";
+                document.getElementById("info4").textContent = "Github: https://github.com/phucgs";
+            }
+            else{
+                click = false;
+                document.getElementById("info2").textContent = "";
+                document.getElementById("info3").textContent = "";
+                document.getElementById("info4").textContent = "";
+            }
+        
+        }
+    </script>
+</body>
+</html>
